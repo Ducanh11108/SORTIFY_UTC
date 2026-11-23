@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SORTIFY | Hệ thống trực quan hóa thuật toán sắp xếp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="#home" class="logo"><span class="logo-icon">S</span> SORTIFY</a>
+      <nav><a href="#home">Trang chủ</a><a href="#demo">Mô phỏng</a><a href="#learn">Kiến thức</a><a href="#team">Nhóm thực hiện</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-text">
+        <span class="eyebrow">ĐẠI HỌC GIAO THÔNG VẬN TẢI · KHOA HỌC MÁY TÍNH</span>
+        <h1>SORTIFY<br><span>Trực quan hóa thuật toán sắp xếp.</span></h1>
+        <p>Hệ thống minh họa cách máy tính sắp xếp dữ liệu. Quan sát từng lần so sánh, thay đổi vị trí và tìm hiểu ba thuật toán cơ bản.</p>
+        <a class="primary-link" href="#demo">Bắt đầu mô phỏng <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="mini-chart"><i style="height:43%"></i><i style="height:77%"></i><i style="height:32%"></i><i style="height:94%"></i><i style="height:58%"></i><i style="height:70%"></i><i style="height:100%"></i></div><div class="art-caption">SORTING VISUALIZER <span>● LIVE DEMO</span></div></div>
+    </section>
+
+    <section class="workspace container" id="demo">
+      <div class="section-heading"><div><span class="eyebrow">THỰC HÀNH</span><h2>Không gian mô phỏng</h2></div><span class="section-note">Tạo mảng → chọn thuật toán → bắt đầu</span></div>
+      <div class="panel">
+        <div class="controls">
+          <div class="field"><label for="algorithm">Thuật toán</label><select id="algorithm"><option value="bubble">Bubble Sort</option><option value="selection">Selection Sort</option><option value="insertion">Insertion Sort</option></select></div>
+          <div class="field"><label for="speed">Tốc độ: <span id="speedText">Trung bình</span></label><input type="range" id="speed" min="1" max="5" value="3"></div>
+          <div class="buttons"><button id="randomBtn" class="secondary-btn">↻ Tạo mảng mới</button><button id="startBtn" class="primary-btn">▶ Bắt đầu</button></div>
+        </div>
+        <div class="chart-header"><span><span class="dot"></span> Biểu đồ dữ liệu</span><span id="status">Sẵn sàng</span></div>
+        <div id="bars" class="bars" aria-label="Biểu đồ các giá trị trong mảng"></div>
+        <p class="demo-help">Hướng dẫn: Nhấn <strong>Tạo mảng mới</strong>, chọn thuật toán rồi nhấn <strong>Bắt đầu</strong>. Cột vàng là phần tử đang được so sánh; cột xanh lá là kết quả đã sắp xếp.</p>
+        <div class="legend"><span><i class="legend-color normal"></i> Chưa xử lý</span><span><i class="legend-color active"></i> Đang so sánh</span><span><i class="legend-color done"></i> Đã sắp xếp</span></div>
+        <div class="stats"><div><span>Số phần tử</span><strong id="count">0</strong></div><div><span>Lần so sánh</span><strong id="comparisons">0</strong></div><div><span>Lần thay đổi</span><strong id="changes">0</strong></div><div><span>Trạng thái</span><strong id="result">Chưa chạy</strong></div></div>
+        <div class="algorithm-explain"><h3 id="algorithmTitle">Bubble Sort hoạt động thế nào?</h3><p id="algorithmExplain">So sánh hai phần tử liền kề và đổi chỗ nếu sai thứ tự.</p><p id="algorithmComplexity">Độ phức tạp thời gian: O(n²) trong trường hợp trung bình và xấu nhất.</p></div>
+      </div>
+    </section>
+
+    <section class="learn container" id="learn"><div class="section-heading"><div><span class="eyebrow">KIẾN THỨC CƠ BẢN</span><h2>Ba thuật toán được sử dụng</h2></div></div><div class="cards"><article class="info-card"><span class="number">01 /</span><h3>Bubble Sort</h3><p>So sánh hai phần tử đứng cạnh nhau và đổi chỗ nếu chúng sai thứ tự.</p><span class="complexity">O(n²)</span></article><article class="info-card"><span class="number">02 /</span><h3>Selection Sort</h3><p>Tìm phần tử nhỏ nhất trong phần chưa sắp xếp và đưa về đầu.</p><span class="complexity">O(n²)</span></article><article class="info-card"><span class="number">03 /</span><h3>Insertion Sort</h3><p>Lấy từng phần tử và chèn vào vị trí phù hợp trong phần đã sắp xếp.</p><span class="complexity">O(n²) trường hợp xấu nhất</span></article></div></section>
+
+    <section class="theory container" id="theory">
+      <div class="section-heading"><div><span class="eyebrow">TỔNG HỢP KIẾN THỨC</span><h2>So sánh các thuật toán</h2></div></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thuật toán</th><th>Tốt nhất</th><th>Trung bình</th><th>Xấu nhất</th><th>Bộ nhớ phụ</th></tr></thead>
+          <tbody>
+            <tr><td>Bubble Sort*</td><td>O(n²)</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td></tr>
+            <tr><td>Selection Sort</td><td>O(n²)</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td></tr>
+            <tr><td>Insertion Sort</td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="footnote">* Phiên bản Bubble Sort của dự án không dùng cờ dừng sớm, nên trường hợp tốt nhất vẫn là O(n²). Bộ nhớ phụ không tính dữ liệu giao diện mô phỏng.</p>
+    </section>
+
+    <section class="team container" id="team">
+      <div class="section-heading"><div><span class="eyebrow">NHÓM THỰC HIỆN</span><h2>Sinh viên Khoa học máy tính – UTC</h2></div></div>
+      <div class="team-panel">
+        <div><span class="team-label">Đơn vị</span><strong>Trường Đại học Giao thông vận tải</strong><p>Ngành Khoa học máy tính · Dự án học tập nhóm</p></div>
+        <div><span class="team-label">Thành viên</span><strong>Nhóm 5 sinh viên</strong><p>Điền tên, mã sinh viên và phân công của từng bạn trước khi nộp bài.</p></div>
+      </div>
+      <div class="member-grid">
+        <div>Thành viên 1 <span>Họ tên: Đặng Đức Anh (C) ·MSSV: 263611416</span></div>
+        <div>Thành viên 2 <span>Họ tên: Nguyễn Đăng Việt Hoàn·  MSSV: 263631435</span></div>
+        <div>Thành viên 3 <span>Họ tên: Nguyễn Anh Tuấn ·      MSSV: 263611471</span></div>
+        <div>Thành viên 4 <span>Họ tên: Lê Đức Nhân ·         MSSV: 263631458</span></div>
+        <div>Thành viên 5 <span>Họ tên: Phạm Thế Vũ ·MSSV: 263631475</span></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container footer-inner"><strong>SORTIFY</strong><span>Hệ thống trực quan hóa thuật toán sắp xếp · Khoa học máy tính UTC</span></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
